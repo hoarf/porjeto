@@ -23,6 +23,10 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
+config :porjeto, App.Guardian,
+       issuer: "Hoarf",
+       secret_key: "iOFZM2g2MzszVuaOJD/fi+52/7Cx377KdhZ16OGd9whWf0tbbKLveCfM0YHvndAA"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
