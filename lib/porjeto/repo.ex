@@ -1,5 +1,5 @@
-defmodule Porje.Repo do
-  use Ecto.Repo, otp_app: :porje
+defmodule App.Repo do
+  use Ecto.Repo, otp_app: :porjeto
 
   @doc """
   Dynamically loads the repository url from the

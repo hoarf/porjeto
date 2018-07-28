@@ -1,4 +1,4 @@
-defmodule PorjeWeb.ConnCase do
+defmodule AppWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,18 +19,18 @@ defmodule PorjeWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      import PorjeWeb.Router.Helpers
+      import AppWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint PorjeWeb.Endpoint
+      @endpoint AppWeb.Endpoint
     end
   end
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Porje.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(App.Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Porje.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(App.Repo, {:shared, self()})
     end
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end

@@ -1,4 +1,4 @@
-defmodule Porje.Application do
+defmodule App.Application do
   use Application
 
   # See https://hexdocs.pm/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule Porje.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Porje.Repo, []),
+      supervisor(App.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(PorjeWeb.Endpoint, []),
-      # Start your own worker by calling: Porje.Worker.start_link(arg1, arg2, arg3)
-      # worker(Porje.Worker, [arg1, arg2, arg3]),
+      supervisor(AppWeb.Endpoint, []),
+      # Start your own worker by calling: App.Worker.start_link(arg1, arg2, arg3)
+      # worker(App.Worker, [arg1, arg2, arg3]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Porje.Supervisor]
+    opts = [strategy: :one_for_one, name: App.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    PorjeWeb.Endpoint.config_change(changed, removed)
+    AppWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

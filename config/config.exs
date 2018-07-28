@@ -6,15 +6,16 @@
 use Mix.Config
 
 # General application configuration
-config :porje,
-  ecto_repos: [Porje.Repo]
+config :porjeto,
+  namespace: App,
+  ecto_repos: [App.Repo]
 
 # Configures the endpoint
-config :porje, PorjeWeb.Endpoint,
+config :porjeto, AppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "1Vc8y8yOug2W9DP7werggnfoYNZ8BAGXez/mj5YdRznlRUUXg2KwVs/pR5HPwFHy",
-  render_errors: [view: PorjeWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Porje.PubSub,
+  secret_key_base: "e/Cf4T5Vk0Wocq+GbK5z9dK3DFMoM6bpMpIyQTBHBgGcZI2hDXESE+xgsxt9/jk2",
+  render_errors: [view: AppWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: App.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

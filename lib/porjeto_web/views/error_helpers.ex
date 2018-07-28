@@ -1,18 +1,7 @@
-defmodule PorjeWeb.ErrorHelpers do
+defmodule AppWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
-
-  use Phoenix.HTML
-
-  @doc """
-  Generates tag for inlined form input errors.
-  """
-  def error_tag(form, field) do
-    Enum.map(Keyword.get_values(form.errors, field), fn (error) ->
-      content_tag :span, translate_error(error), class: "help-block"
-    end)
-  end
 
   @doc """
   Translates an error message using gettext.
@@ -36,9 +25,9 @@ defmodule PorjeWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(PorjeWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(AppWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(PorjeWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(AppWeb.Gettext, "errors", msg, opts)
     end
   end
 end

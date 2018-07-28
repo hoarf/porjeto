@@ -1,12 +1,12 @@
-defmodule PorjeWeb do
+defmodule AppWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PorjeWeb, :controller
-      use PorjeWeb, :view
+      use AppWeb, :controller
+      use AppWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,27 +19,24 @@ defmodule PorjeWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PorjeWeb
+      use Phoenix.Controller, namespace: AppWeb
       import Plug.Conn
-      import PorjeWeb.Router.Helpers
-      import PorjeWeb.Gettext
+      import AppWeb.Router.Helpers
+      import AppWeb.Gettext
     end
   end
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/porje_web/templates",
-                        namespace: PorjeWeb
+      use Phoenix.View, root: "lib/porjeto_web/templates",
+                        namespace: AppWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
-
-      import PorjeWeb.Router.Helpers
-      import PorjeWeb.ErrorHelpers
-      import PorjeWeb.Gettext
+      import AppWeb.Router.Helpers
+      import AppWeb.ErrorHelpers
+      import AppWeb.Gettext
     end
   end
 
@@ -54,7 +51,7 @@ defmodule PorjeWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PorjeWeb.Gettext
+      import AppWeb.Gettext
     end
   end
 
