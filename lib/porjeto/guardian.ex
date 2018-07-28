@@ -12,7 +12,7 @@ defmodule App.Guardian do
 
   def resource_from_claims(claims) do
     id = claims["sub"]
-    resource = %Users{id: 1}
+    resource = %App.Users{id: 1}
     {:ok,  resource}
   end
 
