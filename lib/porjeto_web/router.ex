@@ -5,7 +5,9 @@ defmodule AppWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", AppWeb do
+  scope "/", AppWeb do
     pipe_through :api
+
+    resources "/questionaire", QuestionaireController, only: [:show]
   end
 end
