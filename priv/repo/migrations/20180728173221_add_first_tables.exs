@@ -15,23 +15,23 @@ defmodule App.Repo.Migrations.AddUserTable do
       add :answer4, :string
       add :answer5, :string
       add :version, :string, default: "1.0.0"
-      add :parent, references(:questions)
+      add :parent_id, references(:questions)
     end
 
-    create table(:questionaire) do
+    create table(:questionnaires) do
       add :name, :string
       add :version, :string, default: "1.0.0"
-      add :parent, references(:questionaire)
+      add :parent_id, references(:questionnaires)
     end
 
-    create table(:questionaire_spec) do
+    create table(:questionnaire_specs) do
       add :question_id, references(:questions)
-      add :questionaire_id, references(:questionaire)
+      add :questionnaire_id, references(:questionaires)
     end
 
-    create table(:questionaire_submission) do
+    create table(:questionnaire_submissions) do
       add :user_id, references(:users)
-      add :questionaire_id, references(:questionaire)
+      add :questionnaire_id, references(:questionaire)
     end
   end
 end
