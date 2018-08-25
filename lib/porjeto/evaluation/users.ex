@@ -1,2 +1,2 @@
-defmodule Porjeto.Evaluation.Questions do
+defmodule Porjeto.Evaluation.Users do
 end
