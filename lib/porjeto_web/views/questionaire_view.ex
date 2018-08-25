@@ -1,8 +1,8 @@
-defmodule AppWeb.QuestionaireView do
+defmodule AppWeb.QuestionnaireView do
   use AppWeb, :view
 
 
-  def render("show.json", %{questionaire: questionaire}) do
+  def render("show.json", %{questionnaire: questionnaire}) do
     %{}
   end
 end
