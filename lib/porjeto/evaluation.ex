@@ -1,9 +1,12 @@
 defmodule Porjeto.Evaluation do
 
-  alias Porjeto.Evaluation.Questionnaire
+  alias Ecto.Multi
+  alias Porjeto.Evaluation.Eavaluation
 
-  def new_questionnaire do
-    %Questionnaire{}
+  def create_evaluation(user_email) do
+    Multi.new
+    |> Multi.insert_or_update(:user, User.changeset(user_email))
+    |> Multi.insert(:evaluation, Evaluation.changeset())
   end
 
 end
