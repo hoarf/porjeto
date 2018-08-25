@@ -24,14 +24,20 @@ defmodule App.Repo.Migrations.AddUserTable do
       add :parent_id, references(:questionnaires)
     end
 
-    create table(:questionnaire_specs) do
+    create table(:questions_list) do
       add :question_id, references(:questions)
-      add :questionnaire_id, references(:questionaires)
+      add :questionnaire_id, references(:questionnaires)
     end
 
-    create table(:questionnaire_submissions) do
+    create table(:evaluations) do
       add :user_id, references(:users)
-      add :questionnaire_id, references(:questionaire)
+      add :questionnaire_id, references(:questionnaires)
+    end
+
+    create table(:answer) do
+      add :evaluation_id, references(:evaluations)
+      add :question_id, references(:questions)
+      add :duration, :int
     end
   end
 end
