@@ -1,4 +1,4 @@
-defmodule Porjeto.Evaluation.Questionnaires do
+defmodule Porjeto.Evaluation.Questionnaire do
 
   use Ecto.Schema
   import Ecto.Changeset

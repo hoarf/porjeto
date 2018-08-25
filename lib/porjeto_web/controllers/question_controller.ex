@@ -1,6 +1,8 @@
 defmodule AppWeb.QuestionController do
   use AppWeb, :controller
 
+  alias Porjeto.Evaluation.Evaluation
+
   action_fallback(AppWeb.DefaultFallbackController)
 
   def index(conn, %{"questionnaire_id" => questionnaire_id}) do

@@ -1,4 +1,4 @@
-defmodule Porjeto.Evaluation.Questions do
+defmodule Porjeto.Evaluation.Question do
 
   use Ecto.Schema
 

@@ -1,8 +1,8 @@
-defmodule Porjeto.Evaluation.Evaluations do
+defmodule Porjeto.Evaluation.Evaluation do
 
   use Ecto.Schema
   import Ecto.Changeset
-  import Ecto.Query
+  alias Porjeto.Evaluation.{ User, Questionnaire }
 
   schema "evaluations" do
     belongs_to(:questionnaire, Questionnaire)
