@@ -11,6 +11,6 @@ defmodule Porjeto.Evaluation.Evaluations do
 
   def changeset(evaluation, params \\ %{}) do
     evaluation
-    |> cast(params, [:user_id])
+    |> cast_assoc(params, :user)
   end
 end
