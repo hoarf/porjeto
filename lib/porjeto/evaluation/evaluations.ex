@@ -12,6 +12,7 @@ defmodule Porjeto.Evaluation.Evaluation do
   def changeset(evaluation, params \\ %{}) do
     evaluation
     |> cast(params, [])
+    |> put_change(:questionnaire_id, 1)
     |> cast_assoc(:user)
   end
 end
