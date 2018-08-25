@@ -7,8 +7,8 @@ defmodule Porjeto.Evaluation.Questionnaires do
   schema "questionnaires" do
     field(:name, :string)
     field(:version, :string)
-    belongs_to(:questionnaire, __MODULE__)
-    has_many :questions, through: [:questionnaire_specs, :questions]
+    belongs_to(:parent, __MODULE__)
+    many_to_many :questions, Porjeto.Evaluaion.Question, join_through: "questions_list"
   end
 
 end
