@@ -4,7 +4,7 @@ defmodule Porjeto.Evaluation.Evaluations do
   import Ecto.Changeset
   import Ecto.Query
 
-  schema "questionnaires" do
+  schema "evaluations" do
     belongs_to(:questionnaire, Questionnaire)
     belongs_to(:user, User)
   end
