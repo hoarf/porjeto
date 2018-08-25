@@ -6,7 +6,7 @@ defmodule AppWeb.EvaluationController do
   action_fallback(AppWeb.DefaultFallbackController)
 
   def create(conn, %{"user" => _email} = params) do
-    with evaluation <- Evaluation.create_evaluation(params) do
+    with evaluation <- Evaluation.create_evaluation(params) |> Repo.insert_or_update do
       conn
       |> put_status(:ok)
       |> render("show.json", evaluation: evaluation)

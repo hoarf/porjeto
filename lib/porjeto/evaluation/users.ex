@@ -3,7 +3,7 @@ defmodule Porjeto.Evaluation.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "user" do
+  schema "users" do
     field(:email, :string)
   end
 
