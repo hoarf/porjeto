@@ -9,6 +9,6 @@ defmodule Porjeto.Evaluation.User do
 
   def changeset(user, params \\ %{}) do
     user
-    |> cast(params, ["email"])
+    |> cast(params, [:email])
   end
 end
