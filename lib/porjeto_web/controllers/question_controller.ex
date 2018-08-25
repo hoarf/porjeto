@@ -1,7 +1,7 @@
 defmodule AppWeb.QuestionController do
   use AppWeb, :controller
 
-  alias Porjeto.Evaluation.Evaluation
+  alias Porjeto.Evaluation
 
   action_fallback(AppWeb.DefaultFallbackController)
 
