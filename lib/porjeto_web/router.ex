@@ -8,6 +8,10 @@ defmodule AppWeb.Router do
   scope "/", AppWeb do
     pipe_through :api
 
-    resources "/questionaire", QuestionaireController, only: [:show]
+    resources "/evaluation", EvaluationController, only: [:create]
+    resources "/questionnaire", QuestionnaireController, only: [] do
+      resources "/questions", QuestionsController, only: [:index]
+    end
   end
+
 end
