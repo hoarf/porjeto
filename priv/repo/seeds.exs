@@ -1,12 +1,9 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     App.Repo.insert!(%App.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
-App.Repo.insert!(%Porjeto.Evaluation.Question{})
+App.Repo.insert!(%Porjeto.Evaluation.Question{
+      id: 1,
+      description: "How many years have you been alive.",
+      answer1: "10",
+      answer2: "20",
+      answer3: "30",
+      answer4: "40",
+      answer5: "50",
+}, on_conflict: :nothing)

@@ -10,7 +10,7 @@ defmodule AppWeb.Router do
 
     resources "/evaluation", EvaluationController, only: [:create]
     resources "/questionnaire", QuestionnaireController, only: [] do
-      resources "/questions", QuestionsController, only: [:index]
+      resources "/questions", QuestionController, only: [:index]
     end
   end
 
