@@ -35,7 +35,10 @@ defmodule AppWeb.Endpoint do
     key: "_porjeto_key",
     signing_salt: "aGBrfFOm"
 
+  plug CORSPlug, origin: ~r/https?:\/\/localhost.*$/
   plug AppWeb.Router
+
+
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.
