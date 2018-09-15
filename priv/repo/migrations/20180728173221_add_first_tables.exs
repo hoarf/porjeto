@@ -32,12 +32,15 @@ defmodule App.Repo.Migrations.AddUserTable do
     create table(:evaluations) do
       add :user_id, references(:users)
       add :questionnaire_id, references(:questionnaires)
+      add :status, :string
     end
 
     create table(:answer) do
       add :evaluation_id, references(:evaluations)
       add :question_id, references(:questions)
       add :duration, :int
+      add :order, :int
+      add :value, :boolean
     end
   end
 end
