@@ -12,6 +12,6 @@ defmodule Porjeto.Evaluation.Answer do
   def changeset(answer, params \\ %{}) do
     answer
     |> cast(params, [])
-    |> validate_required([:value, :evaluation_id, :question_id])
+    |> validate_required([:value, :evaluation_id, :question_id, :value])
   end
 end
