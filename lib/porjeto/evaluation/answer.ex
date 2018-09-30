@@ -13,5 +13,6 @@ defmodule Porjeto.Evaluation.Answer do
     answer
     |> cast(params, [])
     |> validate_required([:value, :evaluation_id, :question_id, :value])
+    |> unique_constraint(:evaluation, name: :answer_evaluation_id_question_id_index)
   end
 end

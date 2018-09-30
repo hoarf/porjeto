@@ -42,5 +42,7 @@ defmodule App.Repo.Migrations.AddUserTable do
       add :order, :int
       add :value, :boolean
     end
+
+    create unique_index(:answer, [:evaluation_id, :question_id])
   end
 end
