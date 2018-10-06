@@ -8,7 +8,6 @@ defmodule AppWeb.EvaluationController do
 
   def create(conn, params) do
     with {:ok, evaluation} <- Evaluation.build_evaluation(params) |> Repo.insert do
-      IO.inspect evaluation
       conn
       |> put_status(:ok)
       |> render("show.json", evaluation: evaluation)
@@ -16,7 +15,6 @@ defmodule AppWeb.EvaluationController do
   end
 
   def update(conn, params) do
-    IO.inspect params
     with {:ok, evaluation} <- Evaluation.build_evaluation(params) |> Repo.insert(on_conflict: :replace_all, conflict_target: :id) do
       conn
       |> put_status(:ok)
