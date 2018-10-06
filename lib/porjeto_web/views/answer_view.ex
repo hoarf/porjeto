@@ -11,8 +11,8 @@ defmodule AppWeb.AnswerView do
 
   def render("answer.json", %{answer: answer}) do
     %{
-      options: answer.values,
-      question_id: answer.question_id
+      question_id: answer.question_id,
+      options: answer.values
     }
   end
 end

@@ -5,8 +5,11 @@ defmodule Porjeto.Evaluation.Answer do
 
   schema "answers" do
     field(:values, {:array, :boolean})
+
     belongs_to(:question, Question)
     belongs_to(:evaluation, Evaluation)
+
+    timestamps()
   end
 
   def changeset(answer, params \\ %{}) do

@@ -9,6 +9,8 @@ defmodule Porjeto.Evaluation.Questionnaire do
     field(:version, :string)
     belongs_to(:parent, __MODULE__)
     many_to_many :questions, Porjeto.Evaluation.Question, join_through: "questions_list"
+
+    timestamps()
   end
 
 end

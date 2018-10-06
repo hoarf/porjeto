@@ -8,7 +8,7 @@ defmodule AppWeb.Router do
   scope "/", AppWeb do
     pipe_through :api
 
-    resources "/evaluation", EvaluationController, only: [:create] do
+    resources "/evaluation", EvaluationController, only: [:create, :update] do
       patch "/answer/:question_id", AnswerController, :update
       put "/answer/:question_id", AnswerController, :update
     end

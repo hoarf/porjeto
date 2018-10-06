@@ -8,8 +8,9 @@ defmodule Porjeto.Evaluation.Question do
     field(:options, {:array, :string})
     field(:version, :string)
 
-
     many_to_many :questionnaire, Porjeto.Evaluation.Questionnaire, join_through: "questions_list"
+
+    timestamps()
   end
 
 end

@@ -5,6 +5,8 @@ defmodule Porjeto.Evaluation.User do
 
   schema "users" do
     field(:email, :string)
+
+    timestamps()
   end
 
   def changeset(user, params \\ %{}) do

@@ -5,7 +5,7 @@ defmodule Porjeto.Evaluation do
   def build_evaluation(params) do
     with user_changeset <- User.changeset(%User{}, params) do
       %Evaluation{}
-      |> Evaluation.changeset()
+      |> Evaluation.changeset(%{questionnaire_id: 1})
       |> Ecto.Changeset.put_assoc(:user, user_changeset)
     end
   end
