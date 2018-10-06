@@ -1,7 +1,6 @@
 defmodule AppWeb.QuestionView do
   use AppWeb, :view
 
-
   def render("index.json", %{questions: questions}) do
     %{data: render_many(questions, AppWeb.QuestionView, "question.json")}
   end
