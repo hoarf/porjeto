@@ -35,14 +35,14 @@ defmodule App.Repo.Migrations.AddUserTable do
       add :status, :string
     end
 
-    create table(:answer) do
+    create table(:answers) do
       add :evaluation_id, references(:evaluations)
       add :question_id, references(:questions)
       add :duration, :int
       add :order, :int
-      add :value, :boolean
+      add :values, {:array, :boolean}
     end
 
-    create unique_index(:answer, [:evaluation_id, :question_id])
+    create unique_index(:answers, [:evaluation_id, :question_id])
   end
 end
