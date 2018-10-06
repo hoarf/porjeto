@@ -14,6 +14,7 @@ defmodule AppWeb.QuestionView do
     %{
       description: question.description,
       options: question.options,
+      id: question.id
     }
   end
 end
