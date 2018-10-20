@@ -18,4 +18,13 @@ defmodule AppWeb.Router do
     end
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: AppWeb.Schema
+
+    forward "/", Absinthe.Plug,
+      schema: AppWeb.Schema
+  end
 end
