@@ -4,7 +4,6 @@ defmodule Porjeto.Evaluation.Question do
 
   schema "questions" do
     field(:description, :string)
-    field(:type, :string)
     field(:options, {:array, :string})
     field(:key, {:array, :boolean})
     field(:version, :string)
