@@ -9,9 +9,9 @@ defmodule App.Repo.Migrations.AddUserTable do
     end
 
     create table(:questions) do
-      add :type, :string
       add :description, :string
       add :options, {:array, :string}
+      add :key, {:array, :boolean}
       add :version, :string, default: "1.0.0"
       add :parent_id, references(:questions)
 
