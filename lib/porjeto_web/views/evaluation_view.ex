@@ -1,8 +1,8 @@
-defmodule AppWeb.EvaluationView do
-  use AppWeb, :view
+defmodule PorjetoWeb.EvaluationView do
+  use PorjetoWeb, :view
 
   def render("show.json", %{evaluation: evaluation}) do
-    %{data: render_one(evaluation , AppWeb.EvaluationView, "evaluation.json")}
+    %{data: render_one(evaluation, PorjetoWeb.EvaluationView, "evaluation.json")}
   end
 
   def render("evaluation.json", %{evaluation: evaluation}) do

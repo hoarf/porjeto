@@ -8,25 +8,24 @@ use Mix.Config
 # General application configuration
 config :porjeto,
   namespace: App,
-  ecto_repos: [App.Repo]
+  ecto_repos: [Porjeto.Repo]
 
 # Configures the endpoint
-config :porjeto, AppWeb.Endpoint,
+config :porjeto, PorjetoWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "e/Cf4T5Vk0Wocq+GbK5z9dK3DFMoM6bpMpIyQTBHBgGcZI2hDXESE+xgsxt9/jk2",
-  render_errors: [view: AppWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: App.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: PorjetoWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Porjeto.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
-config :porjeto, App.Guardian,
-       issuer: "Hoarf",
-       secret_key: "iOFZM2g2MzszVuaOJD/fi+52/7Cx377KdhZ16OGd9whWf0tbbKLveCfM0YHvndAA"
+config :porjeto, Porjeto.Guardian,
+  issuer: "Hoarf",
+  secret_key: "iOFZM2g2MzszVuaOJD/fi+52/7Cx377KdhZ16OGd9whWf0tbbKLveCfM0YHvndAA"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

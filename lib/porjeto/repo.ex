@@ -1,4 +1,4 @@
-defmodule App.Repo do
+defmodule Porjeto.Repo do
   use Ecto.Repo, otp_app: :porjeto
 
   @doc """

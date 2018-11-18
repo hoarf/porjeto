@@ -1,7 +1,6 @@
 defmodule Porjeto.Evaluation do
-
   alias Porjeto.Evaluation.{User, Evaluation, Answer}
-  alias App.{ Repo, Query }
+  alias Porjeto.Repo
 
   def build_evaluation(params) do
     with user_changeset <- User.changeset(%User{}, params) do
@@ -16,10 +15,13 @@ defmodule Porjeto.Evaluation do
   end
 
   def list_evaluations() do
-    Evaluation |> Repo.all
+    Evaluation |> Repo.all()
   end
 
-  def find_user(%Evaluation{}=evaluation) do
+  def find_user(%Evaluation{} = evaluation) do
     Repo.preload(evaluation, :user).user
+  end
+
+  def calculate_score(%Evaluation{} = evaluation) do
   end
 end

@@ -1,4 +1,4 @@
-defmodule App.Query do
+defmodule Porjeto.Query do
   import Ecto.Query
 
   def by_questionnaire(query, questionnaire_id) do

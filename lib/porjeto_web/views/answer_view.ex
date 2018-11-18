@@ -1,12 +1,12 @@
-defmodule AppWeb.AnswerView do
-  use AppWeb, :view
+defmodule PorjetoWeb.AnswerView do
+  use PorjetoWeb, :view
 
   def render("index.json", %{questions: questions}) do
-    %{data: render_many(questions, AppWeb.AnswerView, "answer.json")}
+    %{data: render_many(questions, PorjetoWeb.AnswerView, "answer.json")}
   end
 
   def render("show.json", %{answer: answer}) do
-    %{data: render_one(answer , AppWeb.AnswerView, "answer.json")}
+    %{data: render_one(answer, PorjetoWeb.AnswerView, "answer.json")}
   end
 
   def render("answer.json", %{answer: answer}) do

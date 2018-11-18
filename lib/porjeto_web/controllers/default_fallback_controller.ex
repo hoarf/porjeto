@@ -1,3 +1,3 @@
-defmodule AppWeb.DefaultFallbackController do
-  use AppWeb, :controller
+defmodule PorjetoWeb.DefaultFallbackController do
+  use PorjetoWeb, :controller
 end

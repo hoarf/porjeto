@@ -1,13 +1,13 @@
-defmodule AppWeb.EvaluationController do
-  use AppWeb, :controller
+defmodule PorjetoWeb.EvaluationController do
+  use PorjetoWeb, :controller
 
   alias Porjeto.Evaluation
-  alias App.Repo
+  alias Porjeto.Repo
 
-  action_fallback(AppWeb.DefaultFallbackController)
+  action_fallback(PorjetoWeb.DefaultFallbackController)
 
   def create(conn, params) do
-    with {:ok, evaluation} <- Evaluation.build_evaluation(params) |> Repo.insert do
+    with {:ok, evaluation} <- Evaluation.build_evaluation(params) |> Repo.insert() do
       conn
       |> put_status(:ok)
       |> render("show.json", evaluation: evaluation)
@@ -15,7 +15,9 @@ defmodule AppWeb.EvaluationController do
   end
 
   def update(conn, params) do
-    with {:ok, evaluation} <- Evaluation.build_evaluation(params) |> Repo.insert(on_conflict: :replace_all, conflict_target: :id) do
+    with {:ok, evaluation} <-
+           Evaluation.build_evaluation(params)
+           |> Repo.insert(on_conflict: :replace_all, conflict_target: :id) do
       conn
       |> put_status(:ok)
       |> render("show.json", evaluation: evaluation)

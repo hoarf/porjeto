@@ -1,10 +1,10 @@
-defmodule AppWeb.QuestionController do
-  use AppWeb, :controller
+defmodule PorjetoWeb.QuestionController do
+  use PorjetoWeb, :controller
 
   alias Porjeto.Evaluation.Question
-  alias App.{Repo, Query}
+  alias Porjeto.{Repo, Query}
 
-  action_fallback(AppWeb.DefaultFallbackController)
+  action_fallback(PorjetoWeb.DefaultFallbackController)
 
   def index(conn, %{"questionnaire_id" => questionnaire_id}) do
     with query <- Query.by_questionnaire(Question, questionnaire_id),
