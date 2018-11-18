@@ -4,7 +4,7 @@ defmodule PorjetoWeb.Schema.EvaluationTypes do
   object :evaluation do
     field(:id, :id)
 
-    field :score, :int do
+    field :score, :integer do
       resolve(&PorjetoWeb.Resolvers.Evaluation.calculate_score/3)
     end
 

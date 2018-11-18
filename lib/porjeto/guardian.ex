@@ -7,7 +7,7 @@ defmodule Porjeto.Guardian do
   end
 
   def resource_from_claims(_claims) do
-    resource = %Porjeto.Users{id: 1}
+    resource = %Porjeto.Evaluation.User{id: 1}
     {:ok, resource}
   end
 end

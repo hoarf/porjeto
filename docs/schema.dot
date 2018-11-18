@@ -1,0 +1,11 @@
+digraph schema {
+  questionnaire
+  question_list -> question
+  question_list -> questionnaire
+  question
+  evaluation -> user
+  evaluation -> questionnaire
+  user
+  answer -> evaluation
+  answer -> question
+}

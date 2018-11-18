@@ -23,5 +23,18 @@ defmodule Porjeto.Evaluation do
   end
 
   def calculate_score(%Evaluation{} = evaluation) do
+    eval = Repo.preload(evaluation, answers: [:question])
+
+    eval.answers
+    |> Enum.map(fn answer ->
+      IO.inspect(answer)
+
+      answer.values
+      |> Enum.zip(answer.question.key)
+      |> Enum.map(fn {a, key} -> a == key end)
+      |> Enum.map(&((&1 && 1) || 0))
+      |> Enum.sum()
+    end)
+    |> Enum.sum()
   end
 end
